@@ -91,6 +91,10 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
               src={service.image}
               alt={service.title}
               className="w-full h-full object-cover object-center"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
+              }}
             />
             <div className="absolute top-3 left-3 bg-neutral-950/90 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md border border-neutral-700">
               Mockup Visual Exclusivo · Agency Git Pires
@@ -231,6 +235,10 @@ const ServicesCatalogSection: React.FC<ServicesCatalogSectionProps> = ({
             decoding="async"
             width="360"
             height="225"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
+            }}
           />
 
           {/* Gradient Overlay for Readability */}

@@ -131,6 +131,10 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                   alt={project.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80';
+                  }}
                 />
                 
                 {/* Overlay hover cue */}

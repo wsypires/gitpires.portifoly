@@ -9,13 +9,105 @@
     <meta property="og:description" content="Portfólio oficial da Agency Git Pires (@git.pires). Criação de sites de alta conversão, páginas integradas ao WhatsApp, landing pages e soluções digitais sob medida." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Standalone Engine (Guarantees 100% styling even if index.css is missing in remote git) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              display: ['Syne', 'sans-serif'],
+              bebas: ['"Bebas Neue"', 'sans-serif'],
+              handwriting: ['Caveat', 'cursive'],
+            },
+            colors: {
+              primary: '#FF5C00',
+              accent: '#FFE600',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Essential Keyframes, Animations and Neo-Brutalist Layout Defaults -->
+    <style>
+      .font-display {
+        font-family: 'Syne', sans-serif !important;
+      }
+      .font-bebas {
+        font-family: 'Bebas Neue', sans-serif !important;
+      }
+      .font-handwriting {
+        font-family: 'Caveat', cursive !important;
+      }
+      .font-sans {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      }
+      
+      .bg-halftone {
+        background-image: radial-gradient(#1e1e1e 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+      }
+
+      .bg-halftone-coral {
+        background-image: radial-gradient(#ff4d30 1.5px, transparent 1.5px);
+        background-size: 10px 10px;
+      }
+
+      .bg-halftone-orange {
+        background-image: radial-gradient(#ff5c00 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+      }
+
+      @keyframes marqueeLeft {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+
+      @keyframes marqueeRight {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0%); }
+      }
+
+      .animate-marquee-left {
+        display: flex !important;
+        width: max-content !important;
+        animation: marqueeLeft 45s linear infinite !important;
+      }
+
+      .animate-marquee-right {
+        display: flex !important;
+        width: max-content !important;
+        animation: marqueeRight 45s linear infinite !important;
+      }
+
+      .animate-marquee-left:hover,
+      .animate-marquee-right:hover {
+        animation-play-state: paused !important;
+      }
+
+      html, body {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        width: 100%;
+        background-color: #FAF8F5;
+      }
+
+      ::selection {
+        background-color: #ff5c00;
+        color: #fff;
+      }
+    </style>
   </head>
-  <body class="bg-[#FAF8F5] text-neutral-900 selection:bg-yellow-300 selection:text-neutral-900 antialiased">
+  <body class="bg-[#FAF8F5] text-neutral-900 selection:bg-yellow-300 selection:text-neutral-900 antialiased min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
